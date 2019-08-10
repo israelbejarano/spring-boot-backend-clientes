@@ -31,18 +31,18 @@ public class Cliente implements Serializable {
 	
 	/** The nombre. */
 	@Column(nullable = false)
-	@NotEmpty
-	@Size(min = 4, max = 20)
+	@NotEmpty(message = "no puede estar vacío")
+	@Size(min = 3, max = 20, message = "debe estar entre 3 y 20")
 	private String nombre;
 	
 	/** The apellido. */
-	@NotEmpty
+	@NotEmpty(message = "no puede estar vacío")
 	private String apellido;
 	
 	/** The email. */
 	@Column(nullable = false, unique = true)
-	@Email
-	@NotEmpty
+	@Email(message = "debe ser una dirección válida")
+	@NotEmpty(message = "no puede estar vacío")
 	private String email;
 	
 	/** The create at. */
