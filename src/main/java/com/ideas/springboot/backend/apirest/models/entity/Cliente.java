@@ -27,12 +27,14 @@ public class Cliente implements Serializable {
 	private Long id;
 	
 	/** The nombre. */
+	@Column(nullable = false)
 	private String nombre;
 	
 	/** The apellido. */
 	private String apellido;
 	
 	/** The email. */
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	/** The create at. */
